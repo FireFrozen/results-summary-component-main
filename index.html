@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" 
+  rel="stylesheet">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; position: absolute; top: 100%;
+    left: 50%;width: 100%;
+    transform: translate(-50%, -100%);}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="result-section">
+      <h1>Your Result</h1>
+
+      <div class="result-score">
+        <h1 id="scoreProm">76</h1>
+        <p>of 100</p>
+
+      </div>
+
+      <p class="result-valoration">Great</p>
+      <p class="result-comment">You scored higher than 65% of the people who have taken these tests.</p>
+
+    </div>
+
+    <div class="summary-section">
+      <h1>Summary</h1>
+
+      <div class="skills-summary">
+        <div class="reaction-summary">
+          <div class="skill-section"><img id="icon0"/>         
+          <p id="category0">Reaction</p></div>
+          <p class="score-summary"><span id="score0">80</span> / 100</p>
+        </div>
+
+        <div class="memory-summary">
+          <div class="skill-section"><img id="icon1"/> 
+          <p id="category1">Memory</p></div>
+          <p class="score-summary"><span id="score1">92</span> / 100</p>
+        </div>
+
+        <div class="verbal-summary">
+          <div class="skill-section"><img id="icon2"/>
+          <p id="category2">Verbal</p></div>
+          <p class="score-summary"><span id="score2">61</span> / 100</p>
+        </div>
+
+        <div class="visual-summary">
+          <div class="skill-section"><img id="icon3"/>
+          <p id="category3">Visual</p></div>
+          <p class="score-summary"><span id="score3">72</span> / 100</p>
+        </div>
+
+      </div>
+
+      <button class="btn-summary">Continue</button>
+
+    </div>
+
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">FireFrozen</a>.
+  </footer>
+
+  <script>
+    
+    fetch('./data.json')
+      .then(response => response.json())
+      .then(data =>{
+        document.getElementById('category0').innerHTML= data[0].category;
+        document.getElementById('score0').innerHTML= data[0].score;
+        scoreReaction = parseInt(data[0].score);
+        document.getElementById('icon0').setAttribute("src",data[0].icon);
+
+        document.getElementById('category1').innerHTML= data[1].category;
+        document.getElementById('score1').innerHTML= data[1].score;
+        scoreMemory = parseInt(data[1].score);
+        document.getElementById('icon1').setAttribute("src",data[1].icon);
+
+        document.getElementById('category2').innerHTML= data[2].category;
+        document.getElementById('score2').innerHTML= data[2].score;
+        scoreVerbal = parseInt(data[2].score);
+        document.getElementById('icon2').setAttribute("src",data[2].icon);
+
+        document.getElementById('category3').innerHTML= data[3].category;
+        document.getElementById('score3').innerHTML= data[3].score;
+        scoreVisual = parseInt(data[3].score);
+        document.getElementById('icon3').setAttribute("src",data[3].icon);
+        
+        prom = parseInt((scoreReaction + scoreMemory + scoreVerbal + scoreVisual)/4);
+        document.getElementById('scoreProm').innerHTML= prom;
+        
+        console.log(data);
+      })
+    console.log(scoreReaction);
+    
+  </script>
+</body>
+</html>

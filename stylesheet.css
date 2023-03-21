@@ -1,0 +1,236 @@
+body{
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    background: white;
+    box-shadow: 0px 10px 15px 0px hsla(212, 37%, 81%, 0.733);
+    border-radius: 1.5rem;
+
+    font-family: 'Hanken Grotesk', sans-serif;
+
+    line-height: normal;
+    
+}
+
+
+.result-section{
+    background: hsl(252, 100%, 67%);
+    background: linear-gradient(0deg,hsl(241, 81%, 54%) 0%, hsl(252, 100%, 67%) 100%);
+    width: 250px;
+    border-radius: 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    line-height: normal;
+
+}
+
+.result-section h1{
+    color: hsl(241, 100%, 89%);
+    font-size: 1rem;
+    margin-top: 1.6rem;;
+}
+
+
+.result-score{
+    background: hsla(256, 72%, 46%, 1);
+    background: linear-gradient(0deg,hsla(241, 72%, 46%, 0) 0%, hsla(256, 72%, 46%, 1) 100%);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    height: 8rem;
+    width: 8rem;
+    
+    line-height: normal;
+    
+}
+
+.result-score h1{
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+.result-score p{
+    color: hsla(241, 100%, 89%, 0.711);  
+    font-size: 12px;
+    margin: 0;
+     
+}
+
+.result-section .result-valoration{
+    font-size: 1.45rem;
+    color: white;
+    margin: 0;
+}
+
+.result-section .result-comment{
+    color: hsl(241, 100%, 89%);
+    font-size: 12px;
+    width: 70%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    
+}
+
+/*Summary*/
+
+.summary-section{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 1.5rem;
+}
+
+.summary-section h1{
+    color: hsl(224, 30%, 27%);
+    font-size: 1rem;
+    margin-top: 1.6rem;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.skills-summary{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.skill-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    font-weight: bold;
+}
+
+.reaction-summary, .memory-summary, .verbal-summary, .visual-summary{
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.reaction-summary{
+    background-color: hsla(0, 100%, 67%, 0.055);
+    color: hsla(0, 100%, 67%);
+}
+
+.memory-summary{
+    background-color: hsl(39, 100%, 56%, 0.055);
+    color: hsl(39, 100%, 56%);  
+}
+
+.verbal-summary{
+    background-color: hsl(166, 100%, 37%, 0.055);
+    color: hsl(166, 100%, 37%);  
+}
+
+.visual-summary{
+    background-color: hsl(234, 85%, 45%, 0.055);
+    color: hsl(234, 85%, 45%);   
+}
+
+svg{
+    margin-left: 10px;
+    font-weight: bold;
+    height: 15px;
+}
+
+img{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+    height: 15px;
+}
+
+.score-summary{
+    color: hsla(240, 12%, 53%, 0.8);
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+span{
+    color:hsl(224, 30%, 27%);
+    
+}
+
+
+.btn-summary{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+
+    text-align: center;
+    
+    margin: auto;
+
+    background-color: hsla(256, 72%, 46%, 1);
+    background: linear-gradient(0deg,hsl(241, 81%, 54%) 0%, hsl(252, 100%, 67%) 100%);
+    
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+
+    align-self: center;
+}
+
+.btn-summary:active{
+    background-color: hsl(224, 30%, 27%);
+    background: linear-gradient(0deg,hsl(224, 30%, 27%) 0%, hsl(224, 30%, 27%) 100%);
+}
+
+/*Mobile size*/
+@media (max-width: 532px) {
+    main {
+      max-width: 375px;
+      border-radius: 0%;
+            
+    }
+
+    .result-section {
+        width: 100%;
+        border-top-left-radius: 0%;
+        border-top-right-radius: 0%;
+    }
+    .summary-section {
+        width: 100%;
+    }
+
+    .btn-summary{
+        margin: initial;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
